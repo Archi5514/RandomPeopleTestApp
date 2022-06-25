@@ -1,12 +1,15 @@
 package com.example.randompeopletestapp.core
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.*
 
 abstract class BaseViewModel<D : AppStateEntity> : ViewModel() {
 
-    protected val mStateLiveData = MutableLiveData<AppState<D>>()
+    protected val stateLiveData = MutableLiveData<AppState<D>>()
+    val stateData: LiveData<AppState<D>>
+        get() = stateLiveData
 
     private val ioCoroutineScope = CoroutineScope(
         Dispatchers.IO
@@ -29,15 +32,17 @@ abstract class BaseViewModel<D : AppStateEntity> : ViewModel() {
         cancelJob()
     }
 
-    protected open fun cancelJob() {
-        ioCoroutineScope.coroutineContext.cancelChildren()
-    }
-
     open fun handleError(error: Throwable) {
         error.printStackTrace()
         runAsync {
-            mStateLiveData.postValue(AppState.Error(error))
+            stateLiveData.postValue(AppState.Error(error))
         }
+    }
+
+    open fun onViewInit() {}
+
+    protected open fun cancelJob() {
+        ioCoroutineScope.coroutineContext.cancelChildren()
     }
 
     protected fun runAsync(block: suspend () -> Unit) = ioCoroutineScope.launch { block() }
