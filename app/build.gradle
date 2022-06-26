@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -61,6 +62,7 @@ dependencies {
     //Room
     implementation(Room.runtime)
     implementation(Room.compiler)
+    implementation(Room.coroutines)
 
     //Glide
     implementation(Glide.glide)
