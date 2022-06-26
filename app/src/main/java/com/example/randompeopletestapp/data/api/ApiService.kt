@@ -8,6 +8,6 @@ import retrofit2.http.Query
 interface ApiService {
 
     @GET("api")
-    fun getRandomUser(@Query("results") results: Int): Deferred<UsersList>
+    fun getUsersList(@Query("results") resultsCount: Int): Deferred<UsersList>
 
 }
