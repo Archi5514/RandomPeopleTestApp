@@ -1,5 +1,6 @@
 package com.example.randompeopletestapp.data.repository
 
+import com.example.randompeopletestapp.data.dto.local.UserDao
 import com.example.randompeopletestapp.data.dto.local.UserDatabase
 import com.example.randompeopletestapp.data.dto.remote.ApiDataSource
 import com.example.randompeopletestapp.domain.entity.LocalUser
@@ -9,10 +10,8 @@ import kotlinx.coroutines.Deferred
 
 class UserRepositoryImpl(
     private val apiDataSource: ApiDataSource,
-    userDatabase: UserDatabase
+    private val userDao: UserDao
 ) : UserRepository {
-
-    private val userDao = userDatabase.getDao()
 
     override suspend fun getRemoteUsersList(resultsCount: Int): RemoteUsersList =
         apiDataSource.getUsersList(resultsCount).await()
