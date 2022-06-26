@@ -31,6 +31,7 @@ object Versions {
     const val stdlib = "1.5.31"
     const val coroutinesCore = "1.5.1"
     const val coroutinesAndroid = "1.5.1"
+    const val coroutineWorker = "2.0.1"
 
     //Retrofit
     const val retrofit = "2.9.0"
@@ -64,6 +65,7 @@ object Kotlin {
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesCore}"
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesAndroid}"
+    const val coroutineWorker = "androidx.work:work-runtime-ktx:${Versions.coroutineWorker}"
 }
 
 object Retrofit {

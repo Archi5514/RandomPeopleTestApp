@@ -1,6 +1,7 @@
 package com.example.randompeopletestapp.core.di
 
 import androidx.room.Room
+import com.example.randompeopletest.core.di.factory
 import com.example.randompeopletest.core.di.get
 import com.example.randompeopletest.core.di.single
 import com.example.randompeopletestapp.data.api.ApiService
@@ -8,6 +9,7 @@ import com.example.randompeopletestapp.data.api.MAIN_API_URL
 import com.example.randompeopletestapp.data.dto.local.UserDatabase
 import com.example.randompeopletestapp.data.dto.remote.ApiDataSourceImpl
 import com.example.randompeopletestapp.data.repository.UserRepositoryImpl
+import com.example.randompeopletestapp.data.worker.DatabaseUpdater
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -29,6 +31,11 @@ fun startDI() {
             "user_database"
         ).build()
     }
-    single { UserRepositoryImpl(get(), get()) }
+    val database: UserDatabase = get()
+
+    single { database.getDao() }
     single { ApiDataSourceImpl(get()) }
+
+    factory { UserRepositoryImpl(get(), get()) }
+    factory { DatabaseUpdater(get()) }
 }

@@ -24,4 +24,29 @@ data class LocalUser(
     val largePic: String,
     val mediumPic: String,
     val thumbnailPic: String
-) : AppStateEntity
+) : AppStateEntity {
+
+    companion object {
+        fun fromRemote(remoteUser: RemoteUser) =
+            LocalUser(
+                uuid = remoteUser.login.uuid,
+                gender = remoteUser.gender,
+                title = remoteUser.name.title,
+                first = remoteUser.name.first,
+                last = remoteUser.name.last,
+                street = remoteUser.location.street,
+                city = remoteUser.location.city,
+                state = remoteUser.location.state,
+                postcode = remoteUser.location.postcode,
+                email = remoteUser.email,
+                username = remoteUser.login.username,
+                password = remoteUser.login.password,
+                age = remoteUser.dob.age,
+                cell = remoteUser.cell,
+                largePic = remoteUser.picture.large,
+                mediumPic = remoteUser.picture.medium,
+                thumbnailPic = remoteUser.picture.thumbnail
+            )
+    }
+
+}

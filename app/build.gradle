@@ -49,6 +49,7 @@ dependencies {
     implementation(Kotlin.stdlib)
     implementation(Kotlin.coroutinesAndroid)
     implementation(Kotlin.coroutinesCore)
+    implementation(Kotlin.coroutineWorker)
 
     //Design
     implementation(Design.appcompat)
