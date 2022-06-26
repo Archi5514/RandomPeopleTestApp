@@ -2,7 +2,7 @@ package com.example.randompeopletestapp.domain.entity
 
 import com.example.randompeopletestapp.core.AppStateEntity
 
-data class User(
+data class RemoteUser(
     val gender: String,
     val name: Name,
     val location: Location,
