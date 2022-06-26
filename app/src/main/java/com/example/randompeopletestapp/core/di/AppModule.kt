@@ -6,6 +6,7 @@ import com.example.randompeopletest.core.di.single
 import com.example.randompeopletestapp.data.api.ApiService
 import com.example.randompeopletestapp.data.api.MAIN_API_URL
 import com.example.randompeopletestapp.data.dto.local.UserDatabase
+import com.example.randompeopletestapp.data.dto.remote.ApiDataSourceImpl
 import com.example.randompeopletestapp.data.repository.UserRepositoryImpl
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -29,4 +30,5 @@ fun startDI() {
         ).build()
     }
     single { UserRepositoryImpl(get(), get()) }
+    single { ApiDataSourceImpl(get()) }
 }
