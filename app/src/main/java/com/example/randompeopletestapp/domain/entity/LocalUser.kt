@@ -3,6 +3,7 @@ package com.example.randompeopletestapp.domain.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.randompeopletestapp.core.AppStateEntity
+import com.example.randompeopletestapp.presentation.main.MainViewState
 
 @Entity(tableName = "users_table")
 data class LocalUser(
@@ -24,7 +25,7 @@ data class LocalUser(
     val largePic: String,
     val mediumPic: String,
     val thumbnailPic: String
-) : AppStateEntity {
+) : MainViewState {
 
     companion object {
         fun fromRemote(remoteUser: RemoteUser) =
