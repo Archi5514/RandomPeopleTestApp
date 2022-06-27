@@ -1,12 +1,10 @@
 package com.example.randompeopletestapp.data.repository
 
 import com.example.randompeopletestapp.data.dto.local.UserDao
-import com.example.randompeopletestapp.data.dto.local.UserDatabase
 import com.example.randompeopletestapp.data.dto.remote.ApiDataSource
-import com.example.randompeopletestapp.domain.entity.LocalUser
+import com.example.randompeopletestapp.domain.entity.appstate.LocalUser
 import com.example.randompeopletestapp.domain.entity.RemoteUsersList
 import com.example.randompeopletestapp.domain.repository.UserRepository
-import kotlinx.coroutines.Deferred
 
 class UserRepositoryImpl(
     private val apiDataSource: ApiDataSource,

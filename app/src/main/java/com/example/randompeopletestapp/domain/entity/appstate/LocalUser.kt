@@ -1,8 +1,8 @@
-package com.example.randompeopletestapp.domain.entity
+package com.example.randompeopletestapp.domain.entity.appstate
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.randompeopletestapp.core.AppStateEntity
+import com.example.randompeopletestapp.domain.entity.RemoteUser
 import com.example.randompeopletestapp.presentation.main.MainViewState
 
 @Entity(tableName = "users_table")

@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.example.randompeopletestapp.domain.entity.LocalUser
+import com.example.randompeopletestapp.domain.entity.appstate.LocalUser
 import kotlinx.coroutines.Deferred
 
 @Dao

@@ -14,6 +14,7 @@ import com.example.randompeopletestapp.data.dto.local.UserDatabase
 import com.example.randompeopletestapp.data.dto.remote.ApiDataSourceImpl
 import com.example.randompeopletestapp.data.repository.UserRepositoryImpl
 import com.example.randompeopletestapp.data.worker.*
+import com.example.randompeopletestapp.presentation.main.MainViewModel
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -44,7 +45,7 @@ fun startDI() {
     factory { UserRepositoryImpl(get(), get()) }
     factory { DatabaseUpdater(get()) }
 
-    single<List<UsersUpdateReceiver>> { listOf(get(), get()) }
+    single { listOf(get<DatabaseUpdater>(), get<MainViewModel>()) }
 
     single {
         val data = Data.Builder()
