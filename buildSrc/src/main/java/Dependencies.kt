@@ -2,9 +2,9 @@ import org.gradle.api.JavaVersion
 
 object Config {
     const val applicationId = "com.example.randompeopletestapp"
-    const val compileSdk = 32
+    const val compileSdk = 31
     const val minSdk = 24
-    const val targetSdk = 32
+    const val targetSdk = 31
     const val jvmTarget = "1.8"
     const val buildTools = "30.0.3"
     val javaVersion = JavaVersion.VERSION_1_8
@@ -81,5 +81,5 @@ object Glide {
 object Room {
     const val runtime = "androidx.room:room-runtime:${Versions.room}"
     const val compiler = "androidx.room:room-compiler:${Versions.room}"
-    const val coroutines = "androidx.room:room-coroutines:${Versions.room}"
+    const val ktx = "androidx.room:room-ktx:${Versions.room}"
 }

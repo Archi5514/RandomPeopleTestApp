@@ -62,8 +62,8 @@ dependencies {
 
     //Room
     implementation(Room.runtime)
-    implementation(Room.compiler)
-    implementation(Room.coroutines)
+    annotationProcessor(Room.compiler)
+    implementation(Room.ktx)
 
     //Glide
     implementation(Glide.glide)

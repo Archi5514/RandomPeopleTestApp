@@ -3,26 +3,28 @@ package com.example.randompeopletestapp.data.worker
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
+import com.example.randompeopletest.core.di.get
 import com.example.randompeopletestapp.data.dto.remote.ApiDataSource
 import com.example.randompeopletestapp.domain.entity.LocalUser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
+const val RESULTS_COUNT_KEY = "resultsCount"
+const val REPEAT_REQUEST_INTERVAL = 10L
+
 class RemoteDownloadCoroutineWorker(
-    private val apiDataSource: ApiDataSource,
-    private val receiversList: List<UsersUpdateReceiver>,
     context: Context,
     params: WorkerParameters
 ) : CoroutineWorker(context, params) {
     override suspend fun doWork(): Result {
         withContext(Dispatchers.IO) {
             try {
-                val remoteUsersList = apiDataSource
-                    .getUsersList(inputData.getInt("resultsCount", 50))
+                val remoteUsersList = get<ApiDataSource>()
+                    .getUsersList(inputData.getInt(RESULTS_COUNT_KEY, 50))
                     .await()
 
                 val localUsersList = remoteUsersList.results.map { LocalUser.fromRemote(it) }
-                receiversList.forEach { it.updateReceived(localUsersList) }
+                get<List<UsersUpdateReceiver>>().forEach { it.updateReceived(localUsersList) }
 
                 return@withContext Result.success()
             } catch (e: Exception) {
