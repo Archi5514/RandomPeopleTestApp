@@ -2,9 +2,9 @@ import org.gradle.api.JavaVersion
 
 object Config {
     const val applicationId = "com.example.randompeopletestapp"
-    const val compileSdk = 31
+    const val compileSdk = 32
     const val minSdk = 24
-    const val targetSdk = 31
+    const val targetSdk = 32
     const val jvmTarget = "1.8"
     const val buildTools = "30.0.3"
     val javaVersion = JavaVersion.VERSION_1_8
@@ -24,14 +24,14 @@ object Versions {
     const val appcompat = "1.4.2"
     const val material = "1.6.1"
     const val constraintLayout = "2.1.4"
-    const val viewPager2 = "1.0.0"
 
     //Kotlin
-    const val core = "1.8.0"
+    const val core = "1.7.0"
     const val stdlib = "1.5.31"
     const val coroutinesCore = "1.5.1"
     const val coroutinesAndroid = "1.5.1"
     const val coroutineWorker = "2.0.1"
+    const val fragmentKtx = "1.1.0"
 
     //Retrofit
     const val retrofit = "2.9.0"
@@ -66,6 +66,7 @@ object Kotlin {
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesAndroid}"
     const val coroutineWorker = "androidx.work:work-runtime-ktx:${Versions.coroutineWorker}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
 }
 
 object Retrofit {

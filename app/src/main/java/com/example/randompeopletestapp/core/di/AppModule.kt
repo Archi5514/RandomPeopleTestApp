@@ -45,7 +45,7 @@ fun startDI() {
     factory { UserRepositoryImpl(get(), get()) }
     factory { DatabaseUpdater(get()) }
 
-    single { listOf(get<DatabaseUpdater>(), get<MainViewModel>()) }
+    single { listOf(get<DatabaseUpdater>()) }
 
     single {
         val data = Data.Builder()

@@ -16,5 +16,5 @@ class UserRepositoryImpl(
 
     override suspend fun insertUser(user: LocalUser) = userDao.insertUser(user)
 
-    override suspend fun getLocalUsersList(): List<LocalUser> = userDao.getAllUsers().await()
+    override suspend fun getLocalUsersList(): List<LocalUser> = userDao.getAllUsers()
 }

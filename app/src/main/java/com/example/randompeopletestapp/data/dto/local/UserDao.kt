@@ -14,6 +14,6 @@ interface UserDao {
     suspend fun insertUser(user: LocalUser)
 
     @Query("SELECT * FROM users_table ORDER BY username DESC")
-    fun getAllUsers(): Deferred<List<LocalUser>>
+    suspend fun getAllUsers(): List<LocalUser>
 
 }

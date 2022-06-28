@@ -50,6 +50,7 @@ dependencies {
     implementation(Kotlin.coroutinesAndroid)
     implementation(Kotlin.coroutinesCore)
     implementation(Kotlin.coroutineWorker)
+    implementation(Kotlin.fragmentKtx)
 
     //Design
     implementation(Design.appcompat)
@@ -62,7 +63,7 @@ dependencies {
 
     //Room
     implementation(Room.runtime)
-    annotationProcessor(Room.compiler)
+    kapt(Room.compiler)
     implementation(Room.ktx)
 
     //Glide
