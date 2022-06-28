@@ -3,7 +3,7 @@ package com.example.randompeopletestapp.domain.entity.appstate
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.randompeopletestapp.domain.entity.RemoteUser
-import com.example.randompeopletestapp.presentation.main.MainViewState
+import com.example.randompeopletestapp.presentation.main.viewstate.MainViewState
 
 @Entity(tableName = "users_table")
 data class LocalUser(

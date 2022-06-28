@@ -14,7 +14,7 @@ import com.example.randompeopletestapp.data.dto.local.UserDatabase
 import com.example.randompeopletestapp.data.dto.remote.ApiDataSourceImpl
 import com.example.randompeopletestapp.data.repository.UserRepositoryImpl
 import com.example.randompeopletestapp.data.worker.*
-import com.example.randompeopletestapp.presentation.main.MainViewModel
+import com.example.randompeopletestapp.presentation.main.viewmodel.MainViewModel
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

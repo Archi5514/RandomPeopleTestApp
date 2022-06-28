@@ -1,10 +1,11 @@
-package com.example.randompeopletestapp.presentation.main
+package com.example.randompeopletestapp.presentation.main.viewmodel
 
 import com.example.randompeopletestapp.core.AppState
 import com.example.randompeopletestapp.core.BaseViewModel
 import com.example.randompeopletestapp.data.worker.UsersUpdateReceiver
 import com.example.randompeopletestapp.domain.entity.appstate.LocalUser
 import com.example.randompeopletestapp.domain.entity.appstate.LocalUsersList
+import com.example.randompeopletestapp.presentation.main.viewstate.MainViewState
 
 class MainViewModel : BaseViewModel<MainViewState>(), UsersUpdateReceiver {
 
