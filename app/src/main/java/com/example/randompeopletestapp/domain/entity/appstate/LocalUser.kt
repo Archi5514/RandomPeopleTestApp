@@ -9,7 +9,6 @@ import com.example.randompeopletestapp.presentation.main.MainViewState
 data class LocalUser(
     @PrimaryKey(autoGenerate = false)
     val uuid: String,
-    val gender: String,
     val title: String,
     val first: String,
     val last: String,
@@ -20,7 +19,6 @@ data class LocalUser(
     val email: String,
     val username: String,
     val password: String,
-    val age: Int,
     val cell: String,
     val largePic: String,
     val mediumPic: String,
@@ -31,7 +29,6 @@ data class LocalUser(
         fun fromRemote(remoteUser: RemoteUser) =
             LocalUser(
                 uuid = remoteUser.login.uuid,
-                gender = remoteUser.gender,
                 title = remoteUser.name.title,
                 first = remoteUser.name.first,
                 last = remoteUser.name.last,
@@ -42,7 +39,6 @@ data class LocalUser(
                 email = remoteUser.email,
                 username = remoteUser.login.username,
                 password = remoteUser.login.password,
-                age = remoteUser.dob.age,
                 cell = remoteUser.cell,
                 largePic = remoteUser.picture.large,
                 mediumPic = remoteUser.picture.medium,
