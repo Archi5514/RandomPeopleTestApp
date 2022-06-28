@@ -16,7 +16,7 @@ data class Name(
 )
 
 data class Location(
-    val street: String,
+    val street: Street,
     val city: String,
     val state: String,
     val postcode: String
@@ -32,4 +32,9 @@ data class Picture(
     val large: String,
     val medium: String,
     val thumbnail: String
+)
+
+data class Street(
+    val number: Int,
+    val address: String
 )

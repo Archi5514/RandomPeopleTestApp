@@ -60,6 +60,7 @@ dependencies {
     //Retrofit
     implementation(Retrofit.retrofit)
     implementation(Retrofit.converterGson)
+    implementation(Retrofit.adapterCoroutines)
 
     //Room
     implementation(Room.runtime)

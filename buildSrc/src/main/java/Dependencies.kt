@@ -72,6 +72,8 @@ object Kotlin {
 object Retrofit {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.converterGson}"
+    const val adapterCoroutines =
+        "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.adapterCoroutines}"
 }
 
 object Glide {
