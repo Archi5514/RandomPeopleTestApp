@@ -1,4 +1,4 @@
-package com.example.randompeopletest.core.di
+package com.example.randompeopletestapp.core.di
 
 class Single<T>(
     private val initializer: () -> T

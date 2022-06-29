@@ -50,6 +50,7 @@ dependencies {
     implementation(Kotlin.coroutinesAndroid)
     implementation(Kotlin.coroutinesCore)
     implementation(Kotlin.coroutineWorker)
+    implementation(Kotlin.fragmentKtx)
 
     //Design
     implementation(Design.appcompat)
@@ -59,13 +60,14 @@ dependencies {
     //Retrofit
     implementation(Retrofit.retrofit)
     implementation(Retrofit.converterGson)
+    implementation(Retrofit.adapterCoroutines)
 
     //Room
     implementation(Room.runtime)
-    implementation(Room.compiler)
-    implementation(Room.coroutines)
+    kapt(Room.compiler)
+    implementation(Room.ktx)
 
     //Glide
     implementation(Glide.glide)
-    implementation(Glide.glideCompiler)
+    kapt(Glide.glideCompiler)
 }

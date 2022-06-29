@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.randompeopletestapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".core.di.App"
         android:allowBackup="true"
@@ -13,7 +15,8 @@
         android:theme="@style/Theme.RandomPeopleTestApp">
         <activity
             android:name=".presentation.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

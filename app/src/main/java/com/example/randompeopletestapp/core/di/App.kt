@@ -1,7 +1,11 @@
 package com.example.randompeopletestapp.core.di
 
 import android.app.Application
-import com.example.randompeopletest.core.di.factory
+import androidx.work.*
+import com.example.randompeopletestapp.data.worker.REPEAT_REQUEST_INTERVAL
+import com.example.randompeopletestapp.data.worker.RESULTS_COUNT_KEY
+import com.example.randompeopletestapp.data.worker.RemoteDownloadCoroutineWorker
+import java.util.concurrent.TimeUnit
 
 class App : Application() {
 
@@ -10,4 +14,5 @@ class App : Application() {
         factory { applicationContext }
         startDI()
     }
+
 }

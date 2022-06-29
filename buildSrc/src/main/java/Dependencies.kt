@@ -24,14 +24,14 @@ object Versions {
     const val appcompat = "1.4.2"
     const val material = "1.6.1"
     const val constraintLayout = "2.1.4"
-    const val viewPager2 = "1.0.0"
 
     //Kotlin
-    const val core = "1.8.0"
+    const val core = "1.7.0"
     const val stdlib = "1.5.31"
     const val coroutinesCore = "1.5.1"
     const val coroutinesAndroid = "1.5.1"
     const val coroutineWorker = "2.0.1"
+    const val fragmentKtx = "1.1.0"
 
     //Retrofit
     const val retrofit = "2.9.0"
@@ -66,11 +66,14 @@ object Kotlin {
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesAndroid}"
     const val coroutineWorker = "androidx.work:work-runtime-ktx:${Versions.coroutineWorker}"
+    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
 }
 
 object Retrofit {
     const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val converterGson = "com.squareup.retrofit2:converter-gson:${Versions.converterGson}"
+    const val adapterCoroutines =
+        "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.adapterCoroutines}"
 }
 
 object Glide {
@@ -81,5 +84,5 @@ object Glide {
 object Room {
     const val runtime = "androidx.room:room-runtime:${Versions.room}"
     const val compiler = "androidx.room:room-compiler:${Versions.room}"
-    const val coroutines = "androidx.room:room-coroutines:${Versions.room}"
+    const val ktx = "androidx.room:room-ktx:${Versions.room}"
 }
