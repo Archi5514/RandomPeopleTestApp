@@ -47,7 +47,6 @@ fun startDI() {
     factory {
         OneTimeWorkRequest.Builder(RemoteDownloadCoroutineWorker::class.java)
             .setInputData(data)
-            .setBackoffCriteria(BackoffPolicy.LINEAR, REPEAT_REQUEST_INTERVAL, TimeUnit.SECONDS)
             .setConstraints(constraints)
             .build()
     }

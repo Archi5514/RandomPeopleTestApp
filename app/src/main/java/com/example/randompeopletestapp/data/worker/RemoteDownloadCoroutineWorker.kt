@@ -37,7 +37,7 @@ class RemoteDownloadCoroutineWorker(
                 usersUpdateReceiversList.forEach {
                     it.updateReceived(localUsersList)
                 }
-                Result.retry()
+                Result.success()
             } catch (e: Exception) {
                 e.printStackTrace()
                 Result.failure()
