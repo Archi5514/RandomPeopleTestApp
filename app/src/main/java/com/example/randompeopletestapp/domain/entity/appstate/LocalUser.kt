@@ -3,7 +3,6 @@ package com.example.randompeopletestapp.domain.entity.appstate
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.randompeopletestapp.domain.entity.RemoteUser
-import com.example.randompeopletestapp.presentation.main.viewstate.MainViewState
 
 @Entity(tableName = "users_table")
 data class LocalUser(
@@ -33,7 +32,7 @@ data class LocalUser(
                 first = remoteUser.name.first,
                 last = remoteUser.name.last,
                 street = remoteUser.location.street.run {
-                    return@run "$number ${if (address == "null") "" else address}"
+                    return@run "$number $name"
                 },
                 city = remoteUser.location.city,
                 state = remoteUser.location.state,

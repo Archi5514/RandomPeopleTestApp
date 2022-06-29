@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/drawable/image_rounded_bg.xml" value="0.2703125" />
         <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/layout/fragment_detail.xml" value="0.1" />
+        <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/layout/fragment_detail.xml" value="0.36522911051212936" />
         <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/layout/fragment_list.xml" value="0.2" />
-        <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/layout/item_user.xml" value="0.536" />
+        <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/layout/item_user.xml" value="0.4691358024691358" />
+        <entry key="..\:/Users/world/AndroidStudioProjects/RandomPeopleTestApp/app/src/main/res/layout/modal_dialog_picture.xml" value="0.22735507246376813" />
       </map>
     </option>
   </component>

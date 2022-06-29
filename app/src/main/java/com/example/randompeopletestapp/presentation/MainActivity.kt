@@ -1,14 +1,16 @@
 package com.example.randompeopletestapp.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.work.WorkManager
 import androidx.work.WorkRequest
-import com.example.randompeopletestapp.core.di.get
 import com.example.randompeopletestapp.R
+import com.example.randompeopletestapp.core.di.get
 import com.example.randompeopletestapp.presentation.main.view.DetailFragment
 import com.example.randompeopletestapp.presentation.main.view.ListFragment
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,14 +28,27 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onResume() {
-        WorkManager.getInstance().enqueue(get<WorkRequest>())
-        Log.d("WORK", "Started")
+        cancelAllWork()
+        updateWork()
+
         super.onResume()
     }
 
     override fun onPause() {
-        WorkManager.getInstance().cancelAllWork()
-        Log.d("WORK", "Cancelled")
+        cancelAllWork()
+
         super.onPause()
+    }
+
+    private fun cancelAllWork() = WorkManager.getInstance().cancelAllWork()
+
+    private fun updateWork() {
+        cancelAllWork()
+
+        val scheduleTaskExecutor = Executors.newScheduledThreadPool(5)
+
+        scheduleTaskExecutor.scheduleAtFixedRate({
+            WorkManager.getInstance().enqueue(get<WorkRequest>())
+        }, 0, 10, TimeUnit.SECONDS)
     }
 }
