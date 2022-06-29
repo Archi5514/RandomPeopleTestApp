@@ -36,5 +36,5 @@ data class Picture(
 
 data class Street(
     val number: Int,
-    val address: String
+    val name: String
 )

@@ -30,6 +30,7 @@ class MainViewModel : BaseViewModel<MainViewState>(), UsersUpdateReceiver {
 
             try {
                 currentUser = cachedList[0]
+                currentImage = currentUser?.largePic
             } catch (e: IndexOutOfBoundsException) {
                 return@runAsync
             }
@@ -52,7 +53,7 @@ class MainViewModel : BaseViewModel<MainViewState>(), UsersUpdateReceiver {
                 // initialized - do nothing
             } ?: kotlin.run {
                 currentUser = users[0]
-                currentImage = users[0].largePic
+                currentImage = currentUser?.largePic
             }
 
             usersList.addAll(users)

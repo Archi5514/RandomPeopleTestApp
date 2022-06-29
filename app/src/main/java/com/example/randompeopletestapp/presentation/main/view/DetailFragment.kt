@@ -40,17 +40,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, MainViewState, MainVi
         data.currentUser?.let {
             binding.run {
                 loadImage(it.largePic, image)
-                title.text = it.title
-                first.text = it.first
-                last.text = it.last
-                username.text = it.username
-                password.text = it.password
-                street.text = it.street
-                city.text = it.city
-                state.text = it.state
-                postcode.text = it.postcode
-                cell.text = it.cell
-                email.text = it.email
+                this.data = it
             }
         }
 
