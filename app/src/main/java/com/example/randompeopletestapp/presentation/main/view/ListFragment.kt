@@ -25,7 +25,10 @@ class ListFragment : BaseFragment<FragmentListBinding, MainViewState, MainViewMo
     }
 
     override fun renderSuccess(data: MainViewState) {
-        data.usersList?.let { adapter?.submitList(it.usersList) }
+        data.usersList?.let {
+            adapter?.submitList(it.usersList)
+        }
+        adapter?.notifyDataSetChanged()
     }
 
     private fun initRecycler() {

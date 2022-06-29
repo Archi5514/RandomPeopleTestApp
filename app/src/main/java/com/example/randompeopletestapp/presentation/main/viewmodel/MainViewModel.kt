@@ -15,8 +15,7 @@ import com.example.randompeopletestapp.presentation.main.viewstate.MainViewState
 class MainViewModel : BaseViewModel<MainViewState>(), UsersUpdateReceiver {
 
     init {
-        val worker = get<RemoteDownloadCoroutineWorker>()
-        worker.usersUpdateReceiversList.add(this)
+        single { this }
     }
 
     override suspend fun updateReceived(users: List<LocalUser>) {
