@@ -13,7 +13,7 @@ import com.example.randompeopletestapp.presentation.main.view.ListFragment
 class MainActivity : AppCompatActivity() {
 
     init {
-        WorkManager.getInstance().enqueue(get<WorkRequest>())
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,9 +29,15 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    override fun onDestroy() {
+    override fun onResume() {
+        WorkManager.getInstance().enqueue(get<WorkRequest>())
+        Log.d("WORK", "Started")
+        super.onResume()
+    }
+
+    override fun onPause() {
         WorkManager.getInstance().cancelAllWork()
         Log.d("WORK", "Cancelled")
-        super.onDestroy()
+        super.onPause()
     }
 }
