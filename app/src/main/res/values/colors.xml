@@ -7,5 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="ginger">#5CA6E6</color>
+    <color name="ginger2">#4D86B8</color>
+    <color name="ginger_secondary">#4981B3</color>
+    <color name="red">#99DC1C1C</color>
     <color name="transparent">#00000000</color>
 </resources>
