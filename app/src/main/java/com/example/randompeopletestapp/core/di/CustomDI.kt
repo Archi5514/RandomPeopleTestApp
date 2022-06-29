@@ -1,9 +1,4 @@
-package com.example.randompeopletest.core.di
-
-import com.example.randompeopletestapp.core.di.Dependency
-import com.example.randompeopletestapp.core.di.Factory
-import com.example.randompeopletestapp.core.di.SimpleDependency
-import com.example.randompeopletestapp.core.di.Single
+package com.example.randompeopletestapp.core.di
 
 
 val dependencies = mutableListOf<Dependency<*>>()

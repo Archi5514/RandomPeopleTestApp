@@ -23,7 +23,7 @@ data class LocalUser(
     val largePic: String,
     val mediumPic: String,
     val thumbnailPic: String
-) : MainViewState {
+) {
 
     companion object {
         fun fromRemote(remoteUser: RemoteUser) =
@@ -32,7 +32,9 @@ data class LocalUser(
                 title = remoteUser.name.title,
                 first = remoteUser.name.first,
                 last = remoteUser.name.last,
-                street = remoteUser.location.street.run { return@run "$number.toString() $address" },
+                street = remoteUser.location.street.run {
+                    return@run "$number ${if (address == "null") "" else address}"
+                },
                 city = remoteUser.location.city,
                 state = remoteUser.location.state,
                 postcode = remoteUser.location.postcode,

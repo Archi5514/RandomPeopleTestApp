@@ -2,8 +2,6 @@ package com.example.randompeopletestapp.core.di
 
 import android.app.Application
 import androidx.work.*
-import com.example.randompeopletest.core.di.factory
-import com.example.randompeopletest.core.di.get
 import com.example.randompeopletestapp.data.worker.REPEAT_REQUEST_INTERVAL
 import com.example.randompeopletestapp.data.worker.RESULTS_COUNT_KEY
 import com.example.randompeopletestapp.data.worker.RemoteDownloadCoroutineWorker
@@ -27,11 +25,13 @@ class App : Application() {
             .setRequiredNetworkType(NetworkType.CONNECTED)
             .build()
 
-        val request = OneTimeWorkRequest.Builder(
-            RemoteDownloadCoroutineWorker::class.java
-        ).setInputData(data).setConstraints(constraints).build()
-
-        WorkManager.getInstance().enqueue(request)
+        single {
+            OneTimeWorkRequest.Builder(RemoteDownloadCoroutineWorker::class.java)
+                .setInputData(data)
+                .setBackoffCriteria(BackoffPolicy.LINEAR, REPEAT_REQUEST_INTERVAL, TimeUnit.SECONDS)
+                .setConstraints(constraints)
+                .build()
+        }
     }
 
 }

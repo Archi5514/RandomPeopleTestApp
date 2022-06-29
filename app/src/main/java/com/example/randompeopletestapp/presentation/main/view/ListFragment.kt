@@ -2,12 +2,11 @@ package com.example.randompeopletestapp.presentation.main.view
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.randompeopletestapp.R
 import com.example.randompeopletestapp.core.BaseFragment
 import com.example.randompeopletestapp.databinding.FragmentListBinding
-import com.example.randompeopletestapp.domain.entity.appstate.LocalUsersList
 import com.example.randompeopletestapp.presentation.main.adapter.UsersListAdapter
 import com.example.randompeopletestapp.presentation.main.viewmodel.MainViewModel
 import com.example.randompeopletestapp.presentation.main.viewstate.MainViewState
@@ -15,7 +14,7 @@ import com.example.randompeopletestapp.presentation.main.viewstate.MainViewState
 class ListFragment : BaseFragment<FragmentListBinding, MainViewState, MainViewModel>(
     R.layout.fragment_list
 ) {
-    override val viewModel: MainViewModel by viewModels()
+    override val viewModel: MainViewModel by activityViewModels()
 
     private var adapter: UsersListAdapter? = null
 
@@ -26,9 +25,7 @@ class ListFragment : BaseFragment<FragmentListBinding, MainViewState, MainViewMo
     }
 
     override fun renderSuccess(data: MainViewState) {
-        if (data is LocalUsersList) adapter?.submitList(data.usersList)
-
-        super.renderSuccess(data)
+        data.usersList?.let { adapter?.submitList(it.usersList) }
     }
 
     private fun initRecycler() {

@@ -69,5 +69,5 @@ dependencies {
 
     //Glide
     implementation(Glide.glide)
-    implementation(Glide.glideCompiler)
+    kapt(Glide.glideCompiler)
 }
