@@ -17,7 +17,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding, MainViewState, MainVi
     override fun renderSuccess(data: MainViewState) {
         data.currentUser?.let {
             binding.run {
-                loadImage(it.mediumPic, image)
+                loadImage(it.largePic, image)
                 title.text = it.title
                 first.text = it.first
                 last.text = it.last

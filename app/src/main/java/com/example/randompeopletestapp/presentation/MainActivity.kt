@@ -12,10 +12,6 @@ import com.example.randompeopletestapp.presentation.main.view.ListFragment
 
 class MainActivity : AppCompatActivity() {
 
-    init {
-
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
